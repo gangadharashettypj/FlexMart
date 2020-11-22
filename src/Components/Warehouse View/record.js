@@ -39,7 +39,7 @@ export default class warehouse extends React.Component {
     }
 
     getData() {
-        axios.get("http://0.0.0.0:5000/warehouse")
+        axios.get("http://smartshishya.com:5000/warehouse")
             .then(res => {
                 console.log('Data from backend', res.data);
                 const tempList = res.data.data.map(obj => {
@@ -74,19 +74,19 @@ export default class warehouse extends React.Component {
         console.log('Clothes', clothList);
         console.log('Food', foodList);
         console.log('Furniture', furnitureList);
-        axios.post("http://0.0.0.0:5000/customer/productList/edevice/add", edeviceList)
+        axios.post("http://smartshishya.com:5000/customer/productList/edevice/add", edeviceList)
                     .then(res => {
                         console.log(res.data.message);
                     });
-        axios.post("http://0.0.0.0:5000/customer/productList/clothes/add", clothList)
+        axios.post("http://smartshishya.com:5000/customer/productList/clothes/add", clothList)
                     .then(res => {
                         console.log(res.data.message);
                     });
-        axios.post("http://0.0.0.0:5000/customer/productList/food/add", foodList)
+        axios.post("http://smartshishya.com:5000/customer/productList/food/add", foodList)
                     .then(res => {
                         console.log(res.data.message);
                     });
-        axios.post("http://0.0.0.0:5000/customer/productList/furniture/add", furnitureList)
+        axios.post("http://smartshishya.com:5000/customer/productList/furniture/add", furnitureList)
                     .then(res => {
                         console.log(res.data.message);
                     });
@@ -94,7 +94,7 @@ export default class warehouse extends React.Component {
     
     handleDelete(row) {
         console.log("Delete!!", row);
-        axios.delete("http://0.0.0.0:5000/warehouse/productList/delete", {data: {id: row._id}})
+        axios.delete("http://smartshishya.com:5000/warehouse/productList/delete", {data: {id: row._id}})
             .then(res => {
                 console.log(res.data.message);
                 this.getData();

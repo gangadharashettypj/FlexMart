@@ -32,7 +32,7 @@ class CustomerSignUp extends Component {
     e.preventDefault();
     console.log(this.state);
     if(this.state.Email.length>0 && this.state.Name.length>0 && this.state.Password && this.state.Phone.length>0 && this.state.UserType.length>0) {
-      Axios.post("http://0.0.0.0:5000/auth/customer/signup", {email: this.state.Email, name: this.state.Name, password: this.state.Password, phone: this.state.Phone, type: this.state.UserType})
+      Axios.post("http://smartshishya.com:5000/auth/customer/signup", {email: this.state.Email, name: this.state.Name, password: this.state.Password, phone: this.state.Phone, type: this.state.UserType})
         .then(res => {
           console.log(res.data.message);
           this.props.history.push('/Login/Customer');

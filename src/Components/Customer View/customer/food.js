@@ -33,7 +33,7 @@ export default class food extends React.Component {
     }
 
     getData() {
-        Axios.get("http://0.0.0.0:5000/customer/food/data")
+        Axios.get("http://smartshishya.com:5000/customer/food/data")
             .then((res) => {
                 console.log('Data from backend', res.data);
                 this.setState({

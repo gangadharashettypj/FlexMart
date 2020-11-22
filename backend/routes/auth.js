@@ -44,10 +44,7 @@ router.post('/customer/signin', (req,res,next) => {
 
 router.post('/admin/signin', (req,res,next) => {
     console.log(req.body);
-    EmpAuthList.find({etype: 'admin'}).then(data => {
-        console.log(data);
-       
-    })
+    
     EmpAuthList.find({etype: 'admin', email: req.body.email})
         .then(data => {
             console.log(data);

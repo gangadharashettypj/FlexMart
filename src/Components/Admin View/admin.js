@@ -33,7 +33,7 @@ export default class admin extends React.Component {
                     .then(url => {
                         console.log('URL', url);
                         const empData = {eimg: url,etype,ename,email,epwd,esal};
-                        axios.post("http://0.0.0.0:5000/admin/employee/add", empData)
+                        axios.post("http://smartshishya.com:5000/admin/employee/add", empData)
                             .then(res => {
                                 document.getElementById('reset').click();
                                 console.log(res.data.message);

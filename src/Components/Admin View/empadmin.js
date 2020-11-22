@@ -30,7 +30,7 @@ export default class empadmin extends React.Component {
     }
 
     getData() {
-        axios.get('http://0.0.0.0:5000/admin/adminList/get')
+        axios.get('http://smartshishya.com:5000/admin/adminList/get')
         .then(res => {
             console.log(res.data.message, res.data.data);
             const temp = res.data.data.map(obj => {
@@ -53,7 +53,7 @@ export default class empadmin extends React.Component {
 
     handleDelete(row) {
         console.log("Delete!!", row);
-        axios.delete("http://0.0.0.0:5000/admin/adminList/delete", {data: {id: row._id}})
+        axios.delete("http://smartshishya.com:5000/admin/adminList/delete", {data: {id: row._id}})
             .then(res => {
                 console.log(res.data.message);
                 this.getData();

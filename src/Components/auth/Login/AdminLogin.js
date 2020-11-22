@@ -21,7 +21,7 @@ export default class AdminLogin extends Component {
     e.preventDefault();
     console.log(this.state);
     if(this.state.Email.length>0 && this.state.Password) {
-      Axios.post("http://0.0.0.0:5000/auth/admin/signin", {email: this.state.Email, password: this.state.Password})
+      Axios.post("http://smartshishya.com:5000/auth/admin/signin", {email: this.state.Email, password: this.state.Password})
         .then(res => {
           console.log(res.data.message, res.data.token);
           localStorage.setItem('token', res.data.token);

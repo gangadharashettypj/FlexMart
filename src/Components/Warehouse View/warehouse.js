@@ -67,7 +67,7 @@ export default class warehouse extends React.Component {
                     .then(url => {
                         console.log('URL', url);
                         const productData = {pimg: url,ptype,pcategory,pname,pno,pprice,pdiscount,pdesc};
-                        axios.post("http://0.0.0.0:5000/warehouse/productList/add", productData)
+                        axios.post("http://smartshishya.com:5000/warehouse/productList/add", productData)
                             .then(res => {
                                 console.log(res.data.message);
                                 document.getElementById('reset').click();
