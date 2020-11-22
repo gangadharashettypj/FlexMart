@@ -34,11 +34,11 @@ export default class Table extends React.Component {
                 console.log("New product added!!");
                 let route = '';
                 if(this.props.token === 'admin') {
-                    route = "http://localhost:5000/admin/adminList/update";
+                    route = "http://0.0.0.0:5000/admin/adminList/update";
                 } else if (this.props.token === 'delivery') {
-                    route = "http://localhost:5000/admin/deliveryList/update";
+                    route = "http://0.0.0.0:5000/admin/deliveryList/update";
                 } else if (this.props.token === 'warehouse') {
-                    route = "http://localhost:5000/admin/warehouseList/update";
+                    route = "http://0.0.0.0:5000/admin/warehouseList/update";
                 }
                 //send to database
                 if(eimg) {
@@ -83,7 +83,7 @@ export default class Table extends React.Component {
             const pwd = document.getElementById('empeditpwd').value;
             const phone = document.getElementById('empeditphone').value;
             const empData = {id,type,name,email,pwd,phone};
-            axios.put("http://localhost:5000/admin/customerList/update",  empData)
+            axios.put("http://0.0.0.0:5000/admin/customerList/update",  empData)
                 .then(res => {
                     console.log(res.data.message);
                     this.props.get();

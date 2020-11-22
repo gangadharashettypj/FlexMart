@@ -20,10 +20,10 @@ export default class delivery extends React.Component {
     }
 
     getData() {
-        axios.get("http://localhost:5000/delivery/get")
+        axios.get("http://0.0.0.0:5000/delivery/get")
             .then(res => {
                 console.log('Data from backend', res.data);
-                axios.get("http://localhost:5000/delivery/get/deliverymen")
+                axios.get("http://0.0.0.0:5000/delivery/get/deliverymen")
                     .then(resp => {
                         console.log('Deliverymen data', resp.data);
                         this.setState({
@@ -36,7 +36,7 @@ export default class delivery extends React.Component {
 
     handleClickMan(obj) {
         const dname = document.getElementById('dname' + obj._id).value;
-        axios.put("http://localhost:5000/delivery/update/man", {_id: obj._id, deliveryman: dname})
+        axios.put("http://0.0.0.0:5000/delivery/update/man", {_id: obj._id, deliveryman: dname})
             .then(res => {
                 console.log(res.data);
                 this.getData();
@@ -44,7 +44,7 @@ export default class delivery extends React.Component {
     }
 
     handleClickDelivery(obj) {
-        axios.put("http://localhost:5000/delivery/update/delivery", {_id: obj._id})
+        axios.put("http://0.0.0.0:5000/delivery/update/delivery", {_id: obj._id})
             .then(res => {
                 console.log(res.data);
                 this.getData();
@@ -52,7 +52,7 @@ export default class delivery extends React.Component {
     }
 
     handleClickRemove(obj) {
-        axios.delete("http://localhost:5000/delivery/remove", {data: {_id: obj._id}})
+        axios.delete("http://0.0.0.0:5000/delivery/remove", {data: {_id: obj._id}})
             .then(res => {
                 console.log(res.data);
                 this.getData();

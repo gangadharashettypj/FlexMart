@@ -46,7 +46,7 @@ export default class Table extends React.Component {
                     .then(url => {
                         console.log('URL', url);
                         const productData = {pid:this.props.row._id,pimg: url,ptype,pcategory,pname,pno,pprice,pdiscount,pdesc};
-                        axios.put("http://localhost:5000/warehouse/productList/update", {data: {data: productData}})
+                        axios.put("http://0.0.0.0:5000/warehouse/productList/update", {data: {data: productData}})
                         .then(res => {
                             console.log(res.data.message);
                             this.props.get();
@@ -57,7 +57,7 @@ export default class Table extends React.Component {
             } else {
                 pimg = this.props.row.pimg;
                 const productData = {pid:this.props.row._id,pimg,ptype,pcategory,pname,pno,pprice,pdiscount,pdesc};
-                    axios.put("http://localhost:5000/warehouse/productList/update", {data: {data: productData}})
+                    axios.put("http://0.0.0.0:5000/warehouse/productList/update", {data: {data: productData}})
                         .then(res => {
                             console.log(res.data.message);
                             this.props.get();

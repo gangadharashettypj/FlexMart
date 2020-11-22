@@ -81,29 +81,29 @@ class Cart extends React.Component {
         console.log('Furniture', furniture);
         console.log('Clothes', clothes);
         const custid = localStorage.getItem('id');
-        Axios.post("http://localhost:5000/delivery/add", {data: this.state.productList, custid: custid})
+        Axios.post("http://0.0.0.0:5000/delivery/add", {data: this.state.productList, custid: custid})
             .then((res) => {
                 console.log(res.data.message);
                 if(edevice) {
-                    Axios.post("http://localhost:5000/customer/productList/edevice/update", edevice)
+                    Axios.post("http://0.0.0.0:5000/customer/productList/edevice/update", edevice)
                         .then(res => {
                             console.log(res.data.message);
                         });
                 }
                 if(clothes) {
-                    Axios.post("http://localhost:5000/customer/productList/clothes/update", clothes)
+                    Axios.post("http://0.0.0.0:5000/customer/productList/clothes/update", clothes)
                         .then(res => {
                             console.log(res.data.message);
                         });
                 }
                 if(food) {
-                    Axios.post("http://localhost:5000/customer/productList/food/update", food)
+                    Axios.post("http://0.0.0.0:5000/customer/productList/food/update", food)
                         .then(res => {
                             console.log(res.data.message);
                         });
                 }
                 if(furniture) {
-                    Axios.post("http://localhost:5000/customer/productList/furniture/update", furniture)
+                    Axios.post("http://0.0.0.0:5000/customer/productList/furniture/update", furniture)
                         .then(res => {
                             console.log(res.data.message);
                         });

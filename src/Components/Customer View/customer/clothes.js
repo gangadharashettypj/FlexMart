@@ -33,7 +33,7 @@ export default class clothes extends React.Component {
     }
 
     getData() {
-        Axios.get("http://localhost:5000/customer/clothes/data")
+        Axios.get("http://0.0.0.0:5000/customer/clothes/data")
             .then((res) => {
                 console.log('Data from backend', res.data);
                 this.setState({

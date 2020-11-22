@@ -30,7 +30,7 @@ export default class empwarehouse extends React.Component {
     }
 
     getData() {
-        axios.get('http://localhost:5000/admin/warehouseList/get')
+        axios.get('http://0.0.0.0:5000/admin/warehouseList/get')
         .then(res => {
             console.log(res.data.message, res.data.data);
             const temp = res.data.data.map(obj => {
@@ -53,7 +53,7 @@ export default class empwarehouse extends React.Component {
 
     handleDelete(row) {
         console.log("Delete!!", row);
-        axios.delete("http://localhost:5000/admin/warehouseList/delete", {data: {id: row._id}})
+        axios.delete("http://0.0.0.0:5000/admin/warehouseList/delete", {data: {id: row._id}})
             .then(res => {
                 console.log(res.data.message);
                 this.getData();
